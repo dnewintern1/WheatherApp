@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/sunny_background"
+    tools:context=".MainActivity">
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/searchviewshape"
+        android:queryHint="Seach for Places here"
+        android:searchIcon="@drawable/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cityname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/loctaion"
+        android:drawablePadding="15dp"
+        android:fontFamily="@font/merriweathersans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:text="Today"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityname" />
+
+    <TextView
+        android:id="@+id/temprature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:text="0:0"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/today"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="@+id/today"
+        app:layout_constraintTop_toBottomOf="@+id/today" />
+
+    <TextView
+        android:id="@+id/max_temp"
+        android:layout_width="159dp"
+        android:layout_height="34dp"
+
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/merriweathersans_medium"
+        android:text="0:0"
+        app:layout_constraintEnd_toEndOf="@+id/temprature"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/temprature"
+        app:layout_constraintTop_toBottomOf="@+id/temprature" />
+
+    <TextView
+        android:id="@+id/min_temp"
+        android:layout_width="157dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="0:0"
+        app:layout_constraintEnd_toEndOf="@+id/max_temp"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="@+id/max_temp"
+        app:layout_constraintTop_toBottomOf="@+id/max_temp" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/today"
+        app:layout_constraintTop_toBottomOf="@+id/cityname"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/sun" />
+
+    <TextView
+        android:id="@+id/Wheather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="SUNNY"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:text="Tuesday"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Wheather" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/merriweathersans_regular"
+        android:text="25 January 2023"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="368dp"
+        android:layout_height="232dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/backgroundshape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="361dp"
+                android:layout_height="248dp"
+                android:orientation="horizontal"
+                app:constraint_referenced_ids="linearLayout,linearLayout2,linearLayout3,linearLayout4,linearLayout5,linearLayout6"
+                app:flow_maxElementsWrap="3"
+                app:flow_wrapMode="chain"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_wrapBehaviorInParent="vertical_only">
+
+
+            </androidx.constraintlayout.helper.widget.Flow>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/humidity" />
+
+                <TextView
+                    android:id="@+id/Humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="0.0%" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="Humidity" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/wind" />
+
+                <TextView
+                    android:id="@+id/windSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="0.00 m/s" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="Wind Speed" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/conditions" />
+
+                <TextView
+                    android:id="@+id/condtion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="SUNNY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="Condition" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sunrise" />
+
+                <TextView
+                    android:id="@+id/sunrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunrise" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sunset" />
+
+                <TextView
+                    android:id="@+id/issunset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="00:00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunset" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="5dp"
+                android:background="@drawable/backgroundshape"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sea" />
+
+                <TextView
+                    android:id="@+id/sea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/merriweathersans_medium"
+                    android:text="0000 hPa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sea" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="For your Good Wheather"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
